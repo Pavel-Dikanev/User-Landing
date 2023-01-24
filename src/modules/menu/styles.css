@@ -1,0 +1,43 @@
+.module-contact-container {
+
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "head head head head head"
+        "nav nav desc desc desc"
+        "nav nav desc desc desc"
+        "nav nav desc desc desc"
+        "nav nav desc desc desc";
+    height: 70%;
+    top: 10%;
+    width: 98%;
+    left: 1%;
+    font-family: 'Russo One', sans-serif;
+    font-size: 3rem;
+}
+
+
+.grid-header {
+    grid-area: head;
+    transform: rotate(-5deg);
+    z-index: 3;
+    background-color: grey;
+    text-shadow: 1px 2px 2px rgb(0 0 0 / 60%);
+    color: white;
+    padding: 1rem 4rem 1rem 4rem;
+    position: absolute;
+}
+
+.grid-nav {
+    grid-area: nav;
+    background-color: #ffa08c;
+    transform: rotate(-5deg);
+    z-index: 2;
+}
+
+.grid-desc {
+    grid-area: desc;
+    background-color: #ffff64;
+    z-index: 1;
+}

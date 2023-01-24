@@ -1,5 +1,10 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;300;400;500;600;700;800&family=Russo+One&display=swap');
+
+.App, #root {
   text-align: center;
+  width: 100%;
+  height: 100%;
+  margin:0;
 }
 
 .App-logo {
@@ -35,4 +40,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  min-height: 100%;
+  right: 0;
+  bottom: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: none;
 }

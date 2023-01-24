@@ -1,24 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import Ticker from './modules/ticker'
+import Menu from './modules/menu';
+import BackImage from './images/background.jpg'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img src={BackImage} className='image' alt="background"/>
+      <Ticker/>
+      <Menu message='Hello'/>
     </div>
   );
 }
