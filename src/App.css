@@ -62,5 +62,6 @@
   top: 0;
   z-index: 2;
   left: 0;
-  height: 35%;
+  max-width: 60%;
+  max-height: 35%;
 }
