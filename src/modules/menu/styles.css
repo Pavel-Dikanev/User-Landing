@@ -30,17 +30,17 @@
     position: absolute;
     bottom: 0;
     border-radius: 7px;
+    display: none;
 }
 
 .grid-nav {
     grid-area: nav;
     background-color: #ffa08c;
     transform: rotate(-5deg);
-    z-index: 2;
+    z-index: 3;
 }
 
 .grid-desc {
     grid-area: desc;
     background-color: #ffff64;
-    z-index: 1;
 }

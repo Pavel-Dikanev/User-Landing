@@ -54,12 +54,13 @@
   background-position: center;
   background-repeat: no-repeat;
   filter: sepia(0.5) contrast(1.2);
+  z-index: -1;
 }
 
 .sticker {
   position: absolute;
   top: 0;
-  z-index: 3;
+  z-index: 2;
   left: 0;
   height: 35%;
 }
