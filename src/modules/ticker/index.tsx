@@ -10,9 +10,15 @@ function getRandomInt(max: number): number {
 function Ticker(): ReactElement {
     const [joke, setJoke] = useState(jokes[getRandomInt(8)]);
     
-    setInterval(() => {
+    const interval = setInterval(() => {
         setJoke(jokes[getRandomInt(8)])
-    }, 38000)
+    }, 40000)
+    
+    React.useEffect(() => {
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
 
     return (
         <div className="running-text-container">

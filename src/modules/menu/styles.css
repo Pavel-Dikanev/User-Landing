@@ -19,6 +19,7 @@
     width: 100%;
     max-height: 90%;
     float: left;
+    border-radius: 5px;
 }
 .second {  
     display: flex;
@@ -35,11 +36,11 @@
 }
 .menuElement:hover {
     height: 30%;
-    width: 100%;
+    width: 90%;
 }
 .active {
     height: 30%;
-    width: 100%;
+    width: 90%;
     /* color: rgba(159, 142, 65, 1) */
     filter: invert(59%) sepia(33%) saturate(679%) hue-rotate(12deg) brightness(88%) contrast(83%);
 }

@@ -2,7 +2,9 @@ import React, { ReactElement } from 'react';
 import './styles.css' 
 import MenuImg from './../../images/menu.png'
 import TextImg from './../../images/text.png'
-import MaskImage from './../../images/mask.png'
+import MaskImage3 from './../../images/mask.png'
+import MaskImage2 from './../../images/mask2.png'
+import MaskImage from './../../images/mask3.png'
 
 interface MessageProps {
     message: string;
@@ -22,10 +24,10 @@ function Menu(props: MessageProps): ReactElement {
                     <img src={MaskImage} className='menuImg'/>
                 </div>
                 <div className='menuElement'>
-                    <img src={MaskImage} className='menuImg'/>
+                    <img src={MaskImage2} className='menuImg'/>
                 </div>
                 <div className='menuElement'>
-                    <img src={MaskImage} className='menuImg'/>
+                    <img src={MaskImage3} className='menuImg'/>
                 </div>
             </div>
 
