@@ -55,3 +55,11 @@
   background-repeat: no-repeat;
   filter: sepia(0.5) contrast(1.2);
 }
+
+.sticker {
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  left: 0;
+  height: 35%;
+}

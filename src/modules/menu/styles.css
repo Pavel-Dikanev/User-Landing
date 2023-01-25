@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
-        "head head desc desc desc"
+        "head head head head head"
         "nav nav desc desc desc"
         "nav nav desc desc desc"
         "nav nav desc desc desc"
@@ -20,13 +20,16 @@
 
 .grid-header {
     grid-area: head;
-    transform: rotate(-5deg);
+    transform: rotate(-8deg);
     z-index: 3;
-    background-color: grey;
+    background-color: rgba(5, 4, 4, 0.4);
     text-shadow: 1px 2px 2px rgb(0 0 0 / 60%);
     color: white;
-    padding: 1rem 4rem 1rem 4rem;
+    margin: 1rem 4rem 1rem 4rem;
+    padding: 0rem 0.3rem;
     position: absolute;
+    bottom: 0;
+    border-radius: 7px;
 }
 
 .grid-nav {
