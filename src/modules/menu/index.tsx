@@ -18,7 +18,7 @@ function Menu(props: MessageProps): ReactElement {
                 <img className='menuBackground' src={MenuImg} alt='menu' />
             </div>
             <div className='grid-nav second'>
-                <div className='menuElement'>
+                <div className='menuElement active'>
                     <img src={MaskImage} className='menuImg'/>
                 </div>
                 <div className='menuElement'>

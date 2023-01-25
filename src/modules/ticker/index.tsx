@@ -1,18 +1,24 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import './styles.css' 
 import BrokenGlass from './../../images/brokenGlass.png'
 import FrameImage from './../../images/frame.png'
+
 function getRandomInt(max: number): number {
     return Math.floor(Math.random() * max);
 }
 
-
 function Ticker(): ReactElement {
+    const [joke, setJoke] = useState(jokes[getRandomInt(8)]);
+    
+    setInterval(() => {
+        setJoke(jokes[getRandomInt(8)])
+    }, 38000)
+
     return (
         <div className="running-text-container">
             <img src={FrameImage} className='frame' alt="sticker"/>
             <img src={BrokenGlass} alt='glass' className='broken-glass'/>
-            <div className="running-text-words"> {jokes[getRandomInt(8)]} </div>
+            <div className="running-text-words"> {joke} </div>
             <div className="running-text-cover"></div>
         </div>
     );
