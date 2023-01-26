@@ -5,6 +5,8 @@ import TextImg from './../../images/text.png'
 import MaskImage3 from './../../images/mask.png'
 import MaskImage2 from './../../images/mask2.png'
 import MaskImage from './../../images/mask3.png'
+import Photo from './../../images/photo.png'
+import Stamp from './../../images/stamp.png'
 
 interface MessageProps {
     message: string;
@@ -52,33 +54,42 @@ function Menu(props: MessageProps): ReactElement {
                 <img className='menuBackground' src={MenuImg} alt='menu' />
             </div>
             <div className='grid-nav second'>
-                <div className={'menuElement ' + (active[0] && 'active')} onClick={() => {
+                <div className={'menuElement ' + (active[0] ? 'active' : '')} onClick={() => {
                     setActive([true,false,false])
                     }}>
-                    <img src={MaskImage} className={'menuImg ' + (active[0] && 'activeImg')} alt='text mask' />
-                    <p className={'textMenuElement ' + (active[0] && 'activeText')}>PROFILE</p>
+                    <img src={MaskImage} className={'menuImg ' + (active[0] ? 'activeImg' : '')} alt='text mask' />
+                    <p className={'textMenuElement ' + (active[0] ? 'activeText' : '')}>PROFILE</p>
                 </div>
-                <div className={'menuElement ' + (active[1] && 'active')} onClick={() => {
+                <div className={'menuElement ' + (active[1] ? 'active' : '')} onClick={() => {
                     setActive([false,true,false])
                     }}>
-                    <img src={MaskImage2} className={'menuImg ' + (active[1] && 'activeImg')} alt='text mask' />
-                    <p className={'textMenuElement ' + (active[1] && 'activeText')}>SUMMARY</p>
+                    <img src={MaskImage2} className={'menuImg ' + (active[1] ? 'activeImg' : '')} alt='text mask' />
+                    <p className={'textMenuElement ' + (active[1] ? 'activeText' : '')}>SUMMARY</p>
                 </div>
-                <div className={'menuElement ' + (active[2] && 'active')} onClick={() => {
+                <div className={'menuElement ' + (active[2] ? 'active' : '')} onClick={() => {
                     setActive([false,false,true])
                     }}>
-                    <img src={MaskImage3} className={'menuImg ' + (active[2] && 'activeImg')} alt='text mask' />
-                    <p className={'textMenuElement ' + (active[2] && 'activeText')}>ABOUT ME</p>
+                    <img src={MaskImage3} className={'menuImg ' + (active[2] ? 'activeImg' : '')} alt='text mask' />
+                    <p className={'textMenuElement ' + (active[2] ? 'activeText' : '')}>ABOUT ME</p>
                 </div>
             </div>
 
-            <div className='grid-desc profile'>
+            <div className={'grid-desc profile ' + (active[0] ? 'displayTrue' : '')}>
+                <img className='textBackground' src={TextImg} alt='menu' />
+                <div className='profileContainer'> 
+                    <div className='profilePhoto'><img className='userPhoto' src={Photo} alt='user'/></div>
+                    <div className='profileContacts'> B</div>
+                </div>
+                <div className='profileContainerStamp'> 
+                    <div className='profileStamp'><img className='stampPhoto' src={Stamp} alt='stamp'/></div>
+                </div>
+            </div>
+            <div className={'grid-desc summary ' + (active[1] ? 'displayTrue' : '')}>
+                B
                 <img className='textBackground' src={TextImg} alt='menu' />
             </div>
-            <div className='grid-desc summary'>
-                <img className='textBackground' src={TextImg} alt='menu' />
-            </div>
-            <div className='grid-desc about-me'>
+            <div className={'grid-desc about-me ' + (active[2] ? 'displayTrue' : '')}>
+                C
                 <img className='textBackground' src={TextImg} alt='menu' />
             </div>
         </div>
