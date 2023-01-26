@@ -21,13 +21,16 @@ function Menu(props: MessageProps): ReactElement {
             </div>
             <div className='grid-nav second'>
                 <div className='menuElement active'>
-                    <img src={MaskImage} className='menuImg'/>
+                    <img src={MaskImage} className='menuImg activeImg'/>
+                    <p className='textMenuElement activeText'>PROFILE</p>
                 </div>
                 <div className='menuElement'>
                     <img src={MaskImage2} className='menuImg'/>
+                    <p className='textMenuElement'>RESUME</p>
                 </div>
                 <div className='menuElement'>
                     <img src={MaskImage3} className='menuImg'/>
+                    <p className='textMenuElement'>ABOUT</p>
                 </div>
             </div>
 
