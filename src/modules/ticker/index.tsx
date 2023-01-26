@@ -8,18 +8,19 @@ function getRandomInt(max: number): number {
 }
 
 function Ticker(): ReactElement {
-    const [joke, setJoke] = useState(jokes[getRandomInt(8)]);
+    const [joke, setJoke] = useState(jokes[getRandomInt(5)]);
     
-    const interval = setInterval(() => {
-        setJoke(jokes[getRandomInt(8)])
-    }, 40000)
-
     React.useEffect(() => {
+        let interval = setInterval(() => {
+            console.log('new joke')
+            setJoke(jokes[getRandomInt(5)])
+        }, 40000)
         return () => {
+            console.log('clear interval')
             clearInterval(interval);
         };
     }, []);
-
+    
     return (
         <div className="running-text-container">
             <img src={FrameImage} className='frame' alt="sticker"/>
