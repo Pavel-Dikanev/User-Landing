@@ -1,12 +1,11 @@
-
-
 .module-contact-container {
-    position: relative;
+    position: absolute;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-areas: "nav nav desc desc desc";
     top: 28%;
     height: 55%;
+    width: 98%;
     max-width: 1500px;
     left: 50%;
     transform: translate(-50%, 0);
@@ -16,7 +15,6 @@
     grid-area: nav;
     transform: rotate(-5deg);
     z-index: 3;
-    padding: 1rem;
     height: 50%;
     width: 100%;
     margin-top: 10%;
@@ -24,10 +22,9 @@
 
 .menuImg {
     width: 100%;
-    max-height: 90%;
+    max-height: 100%;
     left: 0;
     position: absolute;
-    border-radius: 5px;
     z-index: -1;
 }
 
@@ -39,10 +36,9 @@
 }
 
 .menuElement {
-    height: 18%;
-    width: 85%;
+    height: 30%;
     transition: height 0.5s, width 0.5s, font-size 0.5s;
-    width: 80%;
+    width: 85%;
     margin-left: 7%;
     position: relative;
     user-select: none;
@@ -51,24 +47,25 @@
 }
 
 .menuElement:hover {
-    height: 30%;
-    width: 88%;
-    font-size: 3rem !important;
+    height: 34%;
+    width: 90%;
 }
 
 .textMenuElement {
-    width: 100%;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 3vmin;
     text-align: left;
-    margin-left: 10%;
+    left: 45%;
     filter: invert(59%) sepia(33%) saturate(679%) hue-rotate(12deg) brightness(88%) contrast(83%);
     max-height: 90%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .active {
-    height: 30%;
-    width: 88%;
+    height: 34%;
+    width: 90%;
     /* color: rgba(159, 142, 65, 1) */
 }
 
@@ -78,7 +75,7 @@
 
 .activeText {
     filter: none;
-    font-size: 3rem;
+    font-size: 5vmin;
 }
 
 
@@ -131,22 +128,27 @@
         "emp1 emp1 emp1 emp emp emp emp emp"
         "emp1 emp1 emp1 emp emp emp emp emp"
         "emp4 stamp stamp emp emp emp emp emp"
-        "emp4 stamp stamp emp emp emp emp emp"
-        "emp4 stamp stamp emp emp emp emp emp"
-        "emp4 emp3 emp3 emp emp emp emp emp";
+        "emp4 stamp stamp emp5 emp5 emp5 blot blot"
+        "emp4 stamp stamp emp5 emp5 emp5 blot blot"
+        "emp4 emp3 emp3 emp5 emp5 emp5 emp2 emp2";
 }
-.profileStamp {
+.profileStamp, .profileBlot {
     grid-area: stamp;
     transform: rotate(10deg);
     opacity: 0.8;
+}
+
+.profileBlot {
+    grid-area: blot;
 }
 
 .profilePhoto {
     grid-area: photo;
     position: relative;
 }
-
-.userPhoto, .stampPhoto{
+.userPhoto,
+.stampPhoto, 
+.blotSticker {
     position: absolute;
     max-width: 100%;
     max-height: 100%;
@@ -154,9 +156,93 @@
     top: 0;
     transform: rotate(3deg);
 }
+
+.profileLine.one {
+    grid-area: line1;
+}
+.profileLine.two {
+    grid-area: line2;
+}
+.profileLine.three {
+    grid-area: line3;
+}
+.profileLine.four {
+    grid-area: line4;
+}
+.profileLine.five {
+    grid-area: line5;
+}
+.profileLine.six {
+    grid-area: line6;
+}
+.profileLine {
+    position: relative;
+    white-space: nowrap
+}
+.bottomBlurLine {
+    border-bottom: 1px dotted darkslategrey;
+    filter: blur(0.6px);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+}
+
+.leftBottomText {
+    margin: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    font-size: 1vmin;
+    filter: blur(0.6px);
+}
 .profileContacts {
     grid-area: info;
-    background-color: rgba(60, 56, 56, 0.5);
-    border-radius: 1rem;
     transform: rotate(0deg);
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: "line1"
+        "line2"
+        "line3"
+        "line4"
+        "line5"
+        "line6";
+}
+
+.frameworkLibrary::before {
+
+	content: "";
+	border-bottom: 3px solid rgba(60, 56, 56, 0.8);
+	position: absolute;
+	width: 120%;
+	height: 50%;
+	transform: rotate(-8deg);
+}
+
+.leftTopText, .leftCenterText {
+    font-family: 'Sedgwick Ave', cursive;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-height: 100%;
+    opacity: 0.7;
+    font-size: 4.5vmin;
+    margin: 0;
+}
+.leftTopText {
+    width: 20%;
+	transform: rotate(-8deg);
+    font-size: 3vmin;
+}
+
+.leftCenterText.profession {
+    font-size: 3.6vmin;
+}
+.leftCenterText.framework {
+    font-size: 4vmin;
+}
+.leftCenterText.company {
+    font-size: 3.6vmin;
+    white-space: break-spaces;
 }

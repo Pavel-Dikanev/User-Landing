@@ -6,14 +6,14 @@
     border-radius: 2px;
     position: absolute;
     bottom: 0;
-    height: 5rem;
+    height: 8vmin;
     white-space: nowrap;
     overflow: hidden;
 }
 .frame {
     z-index: 4;
     width: 100%;
-    height: 5rem;
+    height: 8vmin;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -30,16 +30,16 @@
     bottom: 0;
     background-position: center;
     background-repeat: no-repeat;
-    height: 2.6rem;
-    bottom: 1.2rem;
+    height: 4.5vmin;
+    bottom: 2vmin;
 }
 .running-text-container .running-text-cover {
     width: 100%;
     height: 100%;
     position: absolute;
-    height: 4rem;
+    height: 8vmin;
     z-index: 2;
-    background-size: 0.2rem 0.2rem !important;
+    background-size: 0.3vmin 0.3vmin !important;
     background: url(./../../images/led_bg.png);
     bottom: 0;
 }
@@ -51,7 +51,7 @@
     position: absolute;
     z-index: 1;
     overflow: hidden;
-    font-size: 2rem;
+    font-size: 3vmin;
     font-weight: bold;
     /* color: #00ff00; */
     color: rgb(255, 163, 65);
@@ -61,8 +61,8 @@
     -webkit-animation: scroll 40s infinite linear;
     -moz-animation: scroll 40s infinite linear;
     animation: scroll 40s infinite linear;
-    height: 2.6rem;
-    bottom: 1.2rem;
+    height: 4vmin;
+    bottom: 2vmin;
 }
 
 
