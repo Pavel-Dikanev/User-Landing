@@ -135,8 +135,10 @@
         "emp emp info info info info";
 }
 .profileContainerStamp { 
+    z-index: 1;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(7, 1fr);
+    pointer-events: none;
     grid-template-areas: "emp1 emp1 emp1 emp emp emp emp emp"
         "emp1 emp1 emp1 emp emp emp emp emp"
         "emp1 emp1 emp1 emp emp emp emp emp"
@@ -252,15 +254,21 @@
 .leftCenterText.profession {
     font-size: 3.6vmin;
 }
-.leftCenterText.framework {
+.leftCenterText.github {
     font-size: 4vmin;
 }
-.leftCenterText.company {
+.blackLink {
+    color:rgba(0, 0, 0, 1);
+    text-decoration: none;
+}
+.leftCenterText.mail {
     font-size: 3.6vmin;
     white-space: break-spaces;
 }
 
-
+.userPhoto {
+    z-index: 1;
+}
 
 
 .headerSummary {
@@ -278,18 +286,69 @@
 }
 .summaryHeaderText {
     color: rgba(163, 139, 49, 1);
-    font-size: 3vmin;
-    margin-top: 2vmin;
+    /* color: white; */
+    font-size: 4vmin;
+    margin: 2vmin 0 2vmin 0;
 }
-
-.summaryTextContainer { 
+.summaryTextContainer {
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(7, 1fr);
     grid-template-areas: "headerSummary headerSummary headerSummary headerSummary headerSummary headerSummary headerSummary headerSummary"
-        "emp1 emp1 emp1 emp emp emp emp emp"
-        "emp1 emp1 emp1 emp emp emp emp emp"
-        "emp4 stamp stamp emp emp emp emp emp"
-        "emp4 stamp stamp emp5 emp5 emp5 blot blot"
-        "emp4 stamp stamp emp5 emp5 emp5 blot blot"
-        "emp4 emp3 emp3 emp5 emp5 emp5 emp2 emp2";
+        "line1 line1 line1 line1 line1 line1 line1 line1"
+        "line2 line2 line2 line2 line2 line2 line2 line2"
+        "line3 line3 line3 line3 line3 line3 line3 line3"
+        "line3 line3 line3 line3 line3 line3 line3 line3"
+        "line4 line4 line4 line4 line4 line4 line4 line4"
+        "line5 line5 line5 line5 line5 line5 line5 line5";
+
+    left: 7%;
+    width: 86%;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-weight: 900;
+    font-family: 'Oswald', sans-serif;
+    top: 7%;
+    height: 86%;
+}
+
+.summaryText {
+    white-space: break-spaces;
+    text-align: left;
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    max-height: 100%;
+    max-width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    font-size: 2.5vmin;
+    margin: 0;
+    color:rgb(205, 205, 205);
+}
+.summaryLine.one {
+    grid-area: line1;
+}
+.summaryLine.two {
+    grid-area: line2;
+}
+.summaryLine.three {
+    grid-area: line3;
+}
+.summaryLine.four {
+    grid-area: line4;
+}
+.summaryLine.five {
+    grid-area: line5;
+}
+.summaryLine.six {
+    grid-area: line6;
+}
+.summaryLine {
+    white-space: nowrap;
+    position: relative
+}
+
+.titleOfRow {
+    color: rgba(187, 158, 49, 1);
+    font-size: 2.7vmin;
 }

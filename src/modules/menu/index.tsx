@@ -8,7 +8,6 @@ import MaskImage3 from './../../images/mask3.png'
 import Photo from './../../images/photo.png'
 import Stamp from './../../images/stamp.png'
 import Blot from './../../images/blot.png'
-import TitleBruh from './../../images/titleBruh.png'
 
 function getRandomLeft(max: number): number {
     return Math.floor(Math.random() * max);
@@ -100,14 +99,14 @@ function Menu(): ReactElement {
                             </div>
                             <div className='profileLine four'>
                                 <div className='bottomBlurLine' />
-                                <p className='leftBottomText frameworkLibrary'> framework </p>
-                                <p className='leftTopText'>lib</p>
-                                <p className='leftCenterText framework' style={{ left: 15 + getRandomLeft(25) + '%', transform: 'rotate(-' + getRandomLeft(6) + 'deg)' }}>React</p>
+                                <p className='leftBottomText'> github </p>
+                                {/* <p className='leftTopText'>lib</p> */}
+                                <p className='leftCenterText github' style={{ left: 10 + getRandomLeft(20) + '%', transform: 'rotate(-' + getRandomLeft(6) + 'deg)' }}><a className='blackLink' href='https://github.com/Pavel-Adlf'>@Pavel-Adlf</a></p>
                             </div>
                             <div className='profileLine five'>
                                 <div className='bottomBlurLine' />
-                                <p className='leftBottomText'> company </p>
-                                <p className='leftCenterText company' style={{ left: 10 + getRandomLeft(10) + '%', transform: 'rotate(-' + getRandomLeft(3) + 'deg)' }}>Samara-Informsputnik</p>
+                                <p className='leftBottomText'> mail </p>
+                                <p className='leftCenterText mail' style={{ left: 10 + getRandomLeft(10) + '%', transform: 'rotate(-' + getRandomLeft(3) + 'deg)' }}><a className='blackLink' href="mailto:dikanev.pavel@mail.ru">dikanev.pavel@mail.ru</a></p>
                             </div>
                             <div className='profileLine six'>
                                 {/* <p className='leftBottomText'> name </p> */}
@@ -132,10 +131,28 @@ function Menu(): ReactElement {
                     <img className='textBackground' src={TextImg} style={{ transform: 'rotate(180deg' }} alt='menu' />
                     <div className='summaryTextContainer'>
                         <div className='headerSummary'>
-                            <img className='titleBruh' src={TitleBruh} alt='title bruh' />
                             <p className='summaryHeaderText'>Frontend React Developer</p>
                         </div>
 
+                        <div className='summaryLine one'>
+                                <p className='summaryText'> <span className='titleOfRow'>Work experience:</span> Samara-Informsputnik, 2 years </p>
+                        </div>
+
+                        <div className='summaryLine two'>
+                                <p className='summaryText'> <span className='titleOfRow'>Stack:</span> React, Leaflet, Bootstrap, Webpack, SASS </p>
+                        </div>
+
+                        <div className='summaryLine three'>
+                                <p className='summaryText'> <span className='titleOfRow'>Responsibilities:</span> development and support of geoprojects: work with markers geometry on the map, modals and toolbars creation, pixel perfect layout</p>
+                        </div>
+
+                        <div className='summaryLine four'>
+                                <p className='summaryText'> <span className='titleOfRow'>Work schedule:</span> remote work, flexible hours, full time </p>
+                        </div>
+
+                        <div className='summaryLine five'>
+                                <p className='summaryText'> <span className='titleOfRow'>Key skills:</span> react, javascript, typescript, github, css, sass, html, webpack, bootstrap </p>
+                        </div>
                     </div>
                 </div>
             </div>
