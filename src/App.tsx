@@ -10,7 +10,7 @@ function App() {
       <img src={BackImage} className='image' alt="background"/>
       <img src={StickerImage} className='sticker' alt="sticker"/>
       <Ticker/>
-      <Menu message='Hello'/>
+      <Menu/>
     </div>
   );
 }

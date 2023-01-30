@@ -9,19 +9,14 @@ import Photo from './../../images/photo.png'
 import Stamp from './../../images/stamp.png'
 import Blot from './../../images/blot.png'
 
-interface MessageProps {
-    message: string;
-}
-
 function getRandomLeft(max: number): number {
     return Math.floor(Math.random() * max);
 }
 
-function Menu(props: MessageProps): ReactElement {
+function Menu(): ReactElement {
 
     const [active, setActive] = useState([true, false, false])
-
-
+    
 
     useEffect(() => {
 
@@ -51,9 +46,8 @@ function Menu(props: MessageProps): ReactElement {
     }, [active])
 
     return (
-        <div className='module-contact-container'>
-            <div className='grid-header'>USER OPTIONS</div>
-
+        <>
+    <div className='module-menu-container'>
             <div className='grid-nav'>
                 <img className='menuBackground' src={MenuImg} alt='menu' />
             </div>
@@ -77,8 +71,10 @@ function Menu(props: MessageProps): ReactElement {
                     <p className={'textMenuElement ' + (active[2] ? 'activeText' : '')}>ABOUT ME</p>
                 </div>
             </div>
-
-            <div className={'grid-desc profile ' + (active[0] ? 'displayTrue' : '')}>
+        </div>
+        
+        <div className={'module-contact-container ' + (active[0] ? 'displayGrid' : '')}>
+            <div className={'grid-desc'}>
                 <img className='textBackground' src={TextImg} alt='menu' />
                 <div className='profileContainer'> 
                     <div className='profilePhoto'><img className='userPhoto' src={Photo} alt='user'/></div>
@@ -123,16 +119,56 @@ function Menu(props: MessageProps): ReactElement {
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div className={'grid-desc summary ' + (active[1] ? 'displayTrue' : '')}>
-                B
+        <div className={'module-summary-container ' + (active[1] ? 'displayGrid' : '')}>
+            <div className='grid-desc'>
                 <img className='textBackground' src={TextImg} alt='menu' />
-            </div>
-            <div className={'grid-desc about-me ' + (active[2] ? 'displayTrue' : '')}>
-                C
-                <img className='textBackground' src={TextImg} alt='menu' />
+                <div className='profileContainer'> 
+                    <div className='profilePhoto'><img className='userPhoto' src={Photo} alt='user'/></div>
+                    <div className='profileContacts'> 
+                        <div className='profileLine one'>
+                            <div className='bottomBlurLine'/>
+                            <p className='leftBottomText'> name </p>
+                            <p className='leftCenterText' style={{left: 15+getRandomLeft(40)+'%', transform: 'rotate(-'+getRandomLeft(6)+'deg)'}}>Pavel</p>
+                        </div>
+                        <div className='profileLine two'>
+                            <div className='bottomBlurLine'/>
+                            <p className='leftBottomText'> surname </p>
+                            <p className='leftCenterText' style={{left: 15+getRandomLeft(25)+'%', transform: 'rotate(-'+getRandomLeft(6)+'deg)'}}>Dikanev</p>
+                        </div>
+                        <div className='profileLine three'>
+                            <div className='bottomBlurLine'/>
+                            <p className='leftBottomText'> profession </p>
+                            <p className='leftCenterText profession' style={{left: 10+getRandomLeft(10)+'%', transform: 'rotate(-'+getRandomLeft(6)+'deg)'}}>Frontend developer</p>
+                        </div>
+                        <div className='profileLine four'>
+                            <div className='bottomBlurLine'/>
+                            <p className='leftBottomText frameworkLibrary'> framework </p>
+                            <p className='leftTopText'>lib</p>
+                            <p className='leftCenterText framework' style={{left: 15+getRandomLeft(25)+'%', transform: 'rotate(-'+getRandomLeft(6)+'deg)'}}>React</p>
+                        </div>
+                        <div className='profileLine five'>
+                            <div className='bottomBlurLine'/>
+                            <p className='leftBottomText'> company </p>
+                            <p className='leftCenterText company' style={{ left: 10 + getRandomLeft(10) + '%', transform: 'rotate(-' + getRandomLeft(3) + 'deg)'}}>Samara-Informsputnik</p>
+                        </div>
+                        <div className='profileLine six'>
+                            {/* <p className='leftBottomText'> name </p> */}
+                        </div>
+                    </div>
+                </div>
+                <div className='profileContainerStamp'>
+                    <div className='profileStamp'>
+                        <img className='stampPhoto' src={Stamp} alt='stamp' />
+                    </div>
+                    <div className='profileBlot'>
+                        <img className='blotSticker' src={Blot} alt='blot' />
+                    </div>
+                </div>
             </div>
         </div>
+        </>
     );
 };
 
