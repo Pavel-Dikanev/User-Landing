@@ -1,14 +1,13 @@
-.module-contact-container, .module-summary-container, .module-menu-container, .module-aboutMe-container {
+.module-contact-container, .module-summary-container, .module-menu-container, .module-aboutMe-container, .module-menu-container {
     position: absolute;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-areas: "nav nav desc desc desc";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "desc desc desc";
     top: 15%;
     height: 70%;
     width: 98%;
-    max-width: 1500px;
-    left: 50%;
-    transform: translate(-50%, 0);
+    max-width: 59%;
+    left: 38%;
     display: none;
 }
 
@@ -18,8 +17,12 @@
 } 
 
 .module-menu-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "nav nav";
     top: 28%;
     height: 65%;
+    max-width: 35%;
+    left: 3%;
 }
 
 .grid-nav {
@@ -113,8 +116,12 @@
     z-index: 4;
     padding: 0 1%;
 }
+.grid-display-none {
+    display: none;
+    grid-area: desc;
+}
 
-.profileContainer, .profileContainerStamp {
+.profileContainer, .profileContainerStamp, .summaryTextContainer {
     width: 85%;
     height: 80%;
     display: grid;
@@ -251,4 +258,38 @@
 .leftCenterText.company {
     font-size: 3.6vmin;
     white-space: break-spaces;
+}
+
+
+
+
+.headerSummary {
+    grid-area: headerSummary;
+    position: relative;
+    /* background-color: rgba(163, 139, 49, 1); */
+}
+.titleBruh {
+    position: absolute;
+    max-height: 90%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+.summaryHeaderText {
+    color: rgba(163, 139, 49, 1);
+    font-size: 3vmin;
+    margin-top: 2vmin;
+}
+
+.summaryTextContainer { 
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas: "headerSummary headerSummary headerSummary headerSummary headerSummary headerSummary headerSummary headerSummary"
+        "emp1 emp1 emp1 emp emp emp emp emp"
+        "emp1 emp1 emp1 emp emp emp emp emp"
+        "emp4 stamp stamp emp emp emp emp emp"
+        "emp4 stamp stamp emp5 emp5 emp5 blot blot"
+        "emp4 stamp stamp emp5 emp5 emp5 blot blot"
+        "emp4 emp3 emp3 emp5 emp5 emp5 emp2 emp2";
 }

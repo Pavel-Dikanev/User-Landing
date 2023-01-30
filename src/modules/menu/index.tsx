@@ -8,6 +8,7 @@ import MaskImage3 from './../../images/mask3.png'
 import Photo from './../../images/photo.png'
 import Stamp from './../../images/stamp.png'
 import Blot from './../../images/blot.png'
+import TitleBruh from './../../images/titleBruh.png'
 
 function getRandomLeft(max: number): number {
     return Math.floor(Math.random() * max);
@@ -47,6 +48,7 @@ function Menu(): ReactElement {
 
     return (
         <>
+
             <div className='module-menu-container'>
                 <div className='grid-nav'>
                     <img className='menuBackground' src={MenuImg} alt='menu' />
@@ -128,6 +130,13 @@ function Menu(): ReactElement {
                     <img className='textBackground' src={TextImg} style={{ transform: 'scaleX(-1) rotate(4deg)' }} alt='menu' />
                     <img className='textBackground' src={TextImg} style={{ transform: 'scaleX(-1) rotate(-4deg' }} alt='menu' />
                     <img className='textBackground' src={TextImg} style={{ transform: 'rotate(180deg' }} alt='menu' />
+                    <div className='summaryTextContainer'>
+                        <div className='headerSummary'>
+                            <img className='titleBruh' src={TitleBruh} alt='title bruh' />
+                            <p className='summaryHeaderText'>Frontend React Developer</p>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
@@ -138,6 +147,7 @@ function Menu(): ReactElement {
                     <img className='textBackground' src={TextImg} style={{ transform: 'scaleX(-1)' }} alt='menu' />
                 </div>
             </div>
+
         </>
     );
 };
