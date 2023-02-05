@@ -1,5 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&family=Russo+One&family=Sedgwick+Ave&family=Shadows+Into+Light&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&family=Russo+One&family=Sedgwick+Ave&family=Shadows+Into+Light&family=Fredericka+the+Great&family=Cabin+Sketch:wght@400;700&family=Special+Elite&display=swap');
+@font-face {
+  font-family: Maschine;
+  src: url(./fonts/mechanical-machine.ttf) format('truetype');
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

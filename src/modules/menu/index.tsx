@@ -8,6 +8,9 @@ import MaskImage3 from './../../images/mask3.png'
 import Photo from './../../images/photo.png'
 import Stamp from './../../images/stamp.png'
 import Blot from './../../images/blot.png'
+import Drifting from './../../images/drift.png'
+import Serials from './../../images/serials.webp'
+import Dragon from './../../images/dragon.png'
 
 function getRandomLeft(max: number): number {
     return Math.floor(Math.random() * max);
@@ -85,28 +88,28 @@ function Menu(): ReactElement {
                             <div className='profileLine one'>
                                 <div className='bottomBlurLine' />
                                 <p className='leftBottomText'> name </p>
-                                <p className='leftCenterText' style={{ left: 15 + getRandomLeft(40) + '%', transform: 'rotate(-' + getRandomLeft(6) + 'deg)' }}>Pavel</p>
+                                <p className='leftCenterText' style={{ left: 15 + getRandomLeft(40) + '%', transform: 'rotate(-' + getRandomLeft(3) + 'deg)' }}>Pavel</p>
                             </div>
                             <div className='profileLine two'>
                                 <div className='bottomBlurLine' />
                                 <p className='leftBottomText'> surname </p>
-                                <p className='leftCenterText' style={{ left: 15 + getRandomLeft(25) + '%', transform: 'rotate(-' + getRandomLeft(6) + 'deg)' }}>Dikanev</p>
+                                <p className='leftCenterText' style={{ left: 15 + getRandomLeft(25) + '%', transform: 'rotate(-' + getRandomLeft(3) + 'deg)' }}>Dikanev</p>
                             </div>
                             <div className='profileLine three'>
                                 <div className='bottomBlurLine' />
                                 <p className='leftBottomText'> profession </p>
-                                <p className='leftCenterText profession' style={{ left: 10 + getRandomLeft(10) + '%', transform: 'rotate(-' + getRandomLeft(6) + 'deg)' }}>Frontend developer</p>
+                                <p className='leftCenterText profession' style={{ left: 10 + getRandomLeft(10) + '%', transform: 'rotate(-' + getRandomLeft(3) + 'deg)' }}>frontend developer</p>
                             </div>
                             <div className='profileLine four'>
                                 <div className='bottomBlurLine' />
                                 <p className='leftBottomText'> github </p>
                                 {/* <p className='leftTopText'>lib</p> */}
-                                <p className='leftCenterText github' style={{ left: 10 + getRandomLeft(20) + '%', transform: 'rotate(-' + getRandomLeft(6) + 'deg)' }}><a className='blackLink' href='https://github.com/Pavel-Adlf'>@Pavel-Adlf</a></p>
+                                <p className='leftCenterText github' style={{ left: 10 + getRandomLeft(20) + '%', transform: 'rotate(-' + getRandomLeft(3) + 'deg)' }}><a className='blackLink' href='https://github.com/Pavel-Adlf'>@Pavel-Adlf</a></p>
                             </div>
                             <div className='profileLine five'>
                                 <div className='bottomBlurLine' />
                                 <p className='leftBottomText'> mail </p>
-                                <p className='leftCenterText mail' style={{ left: 10 + getRandomLeft(10) + '%', transform: 'rotate(-' + getRandomLeft(3) + 'deg)' }}><a className='blackLink' href="mailto:dikanev.pavel@mail.ru">dikanev.pavel@mail.ru</a></p>
+                                <p className='leftCenterText mail' style={{ left: 0 + getRandomLeft(10) + '%', transform: 'rotate(-' + getRandomLeft(3) + 'deg)' }}><a className='blackLink' href="mailto:dikanev.pavel@mail.ru">dikanev.pavel@mail.ru</a></p>
                             </div>
                             <div className='profileLine six'>
                                 {/* <p className='leftBottomText'> name </p> */}
@@ -143,7 +146,7 @@ function Menu(): ReactElement {
                         </div>
 
                         <div className='summaryLine three'>
-                                <p className='summaryText'> <span className='titleOfRow'>Responsibilities:</span> development and support of geoprojects: work with markers geometry on the map, modals and toolbars creation, pixel perfect layout</p>
+                                <p className='summaryText'> <span className='titleOfRow'>Responsibilities:</span> development and support of geo projects: work with marker's geometry on the map, modals and toolbars creation, pixel perfect layout</p>
                         </div>
 
                         <div className='summaryLine four'>
@@ -162,6 +165,35 @@ function Menu(): ReactElement {
                     <img className='textBackground' src={TextImg} style={{ transform: 'scaleY(1) rotate(-182deg)' }} alt='menu' />
                     <img className='textBackground' src={TextImg} style={{ transform: 'rotate(-177deg' }} alt='menu' />
                     <img className='textBackground' src={TextImg} style={{ transform: 'scaleX(-1)' }} alt='menu' />
+                    <div className='abouMeTextContainer'>
+                        {/* <div className='headerAboutMe'>
+                            <p className='aboutMeHeaderText'>Winter drifter, bicyclist, whovian, specialist</p>
+                        </div> */}
+
+                        <div className='aboutMeline four'>
+                            <img src={Drifting} className='driftingClass' alt='drift'/>
+                        </div>
+
+                        <div className='aboutMeline three'>
+                                <p className='aboutMeText'> <span className='titleOfRow'>Winter drifter:</span> Lada 2104, WeeRide JL, watt's linkage </p>
+                        </div>
+
+                        <div className='aboutMeline one'>
+                            <img src={Serials} className='boClass' alt='drift'/>
+                        </div>
+
+                        <div className='aboutMeline two'>
+                                <p className='aboutMeText'> <span className='titleOfRow'>Serials fan:</span> Scrubs (9 season suck), Doctor Who (10+ seasons sucks), Sherlock, Shameless, The Big Bang Theory, Loki, Rick and Morty, BoJack Horseman, Archer, GTO, Attack on Titan, etc.</p>
+                        </div>
+
+                        <div className='aboutMeline five'>
+                            <img src={Dragon} className='bicycleClass' alt='drift'/>
+                        </div>
+
+                        <div className='aboutMeline six'>
+                                <p className='aboutMeText'> <span className='titleOfRow'>Cross-country biker:</span> Jamis Dragon 2014, Manitou Marvel Comp, Formula R0, Deore XT Set </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
