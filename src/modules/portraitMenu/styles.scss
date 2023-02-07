@@ -1,0 +1,419 @@
+.menuPortraitBlock {
+    .module-contact-container,
+    .module-summary-container,
+    .module-aboutMe-container{
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "desc desc desc";
+        top: 25%;
+        height: 55%;
+        width: 90%;
+        max-width: 90%;
+        left: 5%;
+        display: none;
+    }
+
+    
+    .displayGrid {
+        display: grid;
+    }
+    .textBackground {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        z-index: -1;
+    }
+
+    .grid-desc {
+        grid-area: desc;
+        position: relative;
+        z-index: 4;
+        padding: 0 1%;
+    }
+
+    .grid-display-none {
+        display: none;
+        grid-area: desc;
+    }
+
+    .profileContainer,
+    .profileContainerStamp,
+    .summaryTextContainer,
+    .abouMeTextContainer {
+        width: 85%;
+        height: 80%;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        top: 10%;
+        left: 10%;
+        position: absolute;
+        grid-template-areas: "photo photo info info info info"
+            "photo photo info info info info"
+            "emp emp info info info info";
+    }
+
+    .profileContainerStamp {
+        z-index: 1;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        pointer-events: none;
+        grid-template-areas: "emp1 emp1 emp1 emp emp emp emp emp"
+            "emp1 emp1 emp1 emp emp emp emp emp"
+            "emp1 emp1 emp1 emp emp emp emp emp"
+            "emp4 stamp stamp emp emp emp emp emp"
+            "emp4 stamp stamp emp5 emp5 emp5 blot blot"
+            "emp4 stamp stamp emp5 emp5 emp5 blot blot"
+            "emp4 emp3 emp3 emp5 emp5 emp5 emp2 emp2";
+    }
+
+    .profileStamp,
+    .profileBlot {
+        grid-area: stamp;
+        transform: rotate(10deg);
+        opacity: 0.8;
+    }
+
+    .profileBlot {
+        grid-area: blot;
+    }
+
+    .profilePhoto {
+        grid-area: photo;
+        position: relative;
+    }
+
+    .userPhoto,
+    .stampPhoto,
+    .blotSticker {
+        position: absolute;
+        max-width: 100%;
+        max-height: 100%;
+        left: 0;
+        top: 0;
+        transform: rotate(3deg);
+    }
+
+    .profileLine.one {
+        grid-area: line1;
+    }
+
+    .profileLine.two {
+        grid-area: line2;
+    }
+
+    .profileLine.three {
+        grid-area: line3;
+    }
+
+    .profileLine.four {
+        grid-area: line4;
+    }
+
+    .profileLine.five {
+        grid-area: line5;
+    }
+
+    .profileLine.six {
+        grid-area: line6;
+    }
+
+    .profileLine {
+        position: relative;
+        white-space: nowrap
+    }
+
+    .bottomBlurLine {
+        border-bottom: 1px dotted darkslategrey;
+        filter: blur(0.6px);
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+    }
+
+    .leftBottomText {
+        margin: 0;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        font-size: 1.8vmin;
+        filter: blur(0.3px);
+    }
+
+    .profileContacts {
+        grid-area: info;
+        transform: rotate(0deg);
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas: "line1"
+            "line2"
+            "line3"
+            "line4"
+            "line5"
+            "line6";
+    }
+
+    .frameworkLibrary::before {
+
+        content: "";
+        border-bottom: 3px solid rgba(60, 56, 56, 0.8);
+        position: absolute;
+        width: 120%;
+        height: 50%;
+        transform: rotate(-8deg);
+    }
+
+    .leftTopText,
+    .leftCenterText {
+        /* font-family: Maschine, cursive; */
+        /* font-family: 'Fredericka the Great', cursive; */
+        /* font-family: 'Cabin Sketch', cursive; */
+        font-family: 'Special Elite', cursive;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        max-height: 100%;
+        opacity: 0.8;
+        font-weight: bold;
+        font-size: 6vmin;
+        margin: 0;
+    }
+
+    .leftTopText {
+        width: 20%;
+        transform: rotate(-8deg);
+        font-size: 5vmin;
+    }
+
+    .leftCenterText.profession {
+        font-size: 4vmin;
+    }
+
+    .leftCenterText.github {
+        font-size: 6vmin;
+    }
+
+    .blackLink {
+        color: rgba(0, 0, 0, 1);
+        text-decoration: none;
+    }
+
+    .leftCenterText.mail {
+        font-size: 3.5vmin;
+        white-space: break-spaces;
+    }
+
+    .userPhoto {
+        z-index: 1;
+        top: 50%;
+        transform: rotate(3deg) translate(0, -50%);
+    }
+    
+
+    .headerSummary,
+    .headerAboutMe {
+        grid-area: headerBlock;
+        position: relative;
+        /* background-color: rgba(163, 139, 49, 1); */
+    }
+
+    .titleBruh {
+        position: absolute;
+        max-height: 90%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+    }
+
+    .summaryHeaderText,
+    .aboutMeHeaderText {
+        /* color: rgba(163, 139, 49, 1); */
+        color: black;
+        font-size: 5vmin;
+        margin: 2vmin 0 2vmin 0;
+    }
+
+    .summaryTextContainer,
+    .abouMeTextContainer {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-areas: "headerBlock headerBlock headerBlock headerBlock headerBlock headerBlock headerBlock headerBlock"
+            "line1 line1 line1 line1 line1 line1 line1 line1"
+            "line3 line3 line3 line3 line3 line3 line3 line3"
+            "line3 line3 line3 line3 line3 line3 line3 line3"
+            "line2 line2 line2 line2 line2 line2 line2 line2"
+            "line5 line5 line5 line5 line5 line5 line5 line5"
+            "line4 line4 line4 line4 line4 line4 line4 line4";
+
+        left: 7%;
+        width: 86%;
+        border-radius: 6px;
+        /* background-color: rgba(0, 0, 0, 0.6); */
+        font-weight: 900;
+        /* font-family: Maschine, sans-serif; */
+        /* font-family: 'Fredericka the Great', cursive; */
+        font-family: 'Special Elite', cursive;
+        top: 7%;
+        height: 86%;
+    }
+
+    .aboutMeText {
+        white-space: break-spaces;
+        text-align: left;
+        position: absolute;
+        left: 5%;
+        max-width: 100%;
+        opacity: 0.7;
+        font-size: 2vmax;
+        margin: 0;
+        color: black;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    .abouMeTextContainer {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+        grid-template-areas: "drift drift drift driftText driftText driftText driftText driftText"
+            "drift drift drift driftText driftText driftText driftText driftText"
+            "drift drift drift driftText driftText driftText driftText driftText"
+            "whoText whoText whoText whoText whoText whoImg whoImg whoImg"
+            "whoText whoText whoText whoText whoText whoImg whoImg whoImg"
+            "whoText whoText whoText whoText whoText whoImg whoImg whoImg"
+            "bicycle bicycle bicycle bicycleText bicycleText bicycleText bicycleText bicycleText"
+            "bicycle bicycle bicycle bicycleText bicycleText bicycleText bicycleText bicycleText"
+            "bicycle bicycle bicycle bicycleText bicycleText bicycleText bicycleText bicycleText";
+    }
+
+    .aboutMeline.one {
+        grid-area: drift;
+    }
+
+    .aboutMeline.two {
+        grid-area: driftText;
+    }
+
+    .aboutMeline.three {
+        grid-area: whoText;
+    }
+
+    .aboutMeline.four {
+        grid-area: whoImg;
+    }
+
+    .aboutMeline.five {
+        grid-area: bicycle;
+    }
+
+    .aboutMeline.six {
+        grid-area: bicycleText;
+    }
+
+    .driftingClass,
+    .bicycleClass,
+    .boClass {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        max-height: 100%;
+        height: unset;
+        object-fit: cover;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        border-radius: 3px;
+    }
+
+    .boClass {
+        max-width: 100%;
+        width: unset;
+    }
+
+    .summaryText {
+        white-space: break-spaces;
+        text-align: left;
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        max-height: 100%;
+        max-width: 100%;
+        height: 100%;
+        opacity: 0.7;
+        font-size: 2vmax;
+        margin: 0;
+        color: black;
+    }
+
+    .summaryLine.one {
+        grid-area: line1;
+    }
+
+    .summaryLine.two {
+        grid-area: line2;
+    }
+
+    .summaryLine.three {
+        grid-area: line3;
+    }
+
+    .summaryLine.four {
+        grid-area: line4;
+    }
+
+    .summaryLine.five {
+        grid-area: line5;
+    }
+
+    .summaryLine.six {
+        grid-area: line6;
+    }
+
+    .summaryLine,
+    .aboutMeline {
+        white-space: nowrap;
+        position: relative;
+    }
+
+    .titleOfRow {
+        /* color: rgba(187, 158, 49, 1); */
+        color: black;
+        background-color: rgba(163, 139, 49, 1);
+        font-size: 3vmin;
+    }
+    .module-menu-points-changing {
+        position: absolute;
+        width: 50%;
+        bottom: 12vh;
+        left: 25%;
+        height: 5vmin;
+    }
+    .pointsContainer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+    }
+    .profilePoint, .summaryPoint, .aboutMePoint {
+        position: relative;
+        width: 33%;
+        height: 100%;
+    }
+    .pointImage {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        max-width: 100%;
+        max-height: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        filter: invert(0.7);
+        opacity: 0.4;
+    }
+}
