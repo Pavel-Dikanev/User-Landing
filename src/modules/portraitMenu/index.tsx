@@ -7,6 +7,8 @@ import Blot from './../../images/blot.png'
 import Drifting from './../../images/drift.png'
 import Serials from './../../images/serials.webp'
 import Dragon from './../../images/dragon.png'
+import EmptyCircle from './../../images/emptyCircle.png'
+import FillCircle from './../../images/fillCircle.png'
 import { SwipeEventListener } from 'swipe-event-listener'
 
 function getRandomLeft(max: number): number {
@@ -26,7 +28,7 @@ function PortraitMenu(): ReactElement {
             }
         })
         setActive(newActive)
-    },[active])
+    }, [active])
 
     useEffect(() => {
         console.log('useEffect')
@@ -39,7 +41,7 @@ function PortraitMenu(): ReactElement {
                 changeMenu(0, -1, active.length - 1)
             }
         }
-        
+
         window.addEventListener('keydown', pointerPush)
         return () => window.removeEventListener('keydown', pointerPush);
     }, [active, changeMenu])
@@ -47,21 +49,21 @@ function PortraitMenu(): ReactElement {
     useEffect(() => {
         console.log('useef')
         const body = document.querySelector('body') as HTMLElement;
-        const {swipeArea} = SwipeEventListener({swipeArea: body});
-        function swipeLeft():void {
+        const { swipeArea } = SwipeEventListener({ swipeArea: body });
+        function swipeLeft(): void {
             changeMenu(active.length - 1, 1, 0)
         }
-        function swipeRight():void {
+        function swipeRight(): void {
             changeMenu(0, -1, active.length - 1)
         }
         swipeArea.addEventListener('swipeLeft', swipeLeft);
         swipeArea.addEventListener('swipeRight', swipeRight);
 
         return () => {
-            swipeArea.removeEventListener('swipeRight',swipeLeft);
+            swipeArea.removeEventListener('swipeRight', swipeLeft);
             swipeArea.removeEventListener('swipeLeft', swipeRight);
         }
-        
+
     }, [active, changeMenu])
 
     return (
@@ -185,6 +187,25 @@ function PortraitMenu(): ReactElement {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className='module-menu-points-changing'>
+                <div className='pointsContainer'>
+                    <div className='profilePoint' onClick={() => {
+                        setActive([true, false, false])
+                    }}>
+                        <img className='pointImage' src={active[0] ? FillCircle : EmptyCircle} alt='point' />
+                    </div>
+                    <div className='summaryPoint' onClick={() => {
+                        setActive([false, true, false])
+                    }}>
+                        <img className='pointImage' src={active[1] ? FillCircle : EmptyCircle} alt='point' />
+                    </div>
+                    <div className='aboutMePoint' onClick={() => {
+                        setActive([false, false, true])
+                    }}>
+                        <img className='pointImage' src={active[2] ? FillCircle : EmptyCircle} alt='point' />
+                    </div></div>
             </div>
 
         </div>
