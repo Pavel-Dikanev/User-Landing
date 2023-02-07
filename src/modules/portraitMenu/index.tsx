@@ -1,29 +1,37 @@
-import React, { ReactElement, useState, useEffect } from 'react';
+import React, { ReactElement, useState, useEffect, useCallback } from 'react';
 import './styles.scss'
-import MenuImg from './../../images/menu.png'
 import TextImg from './../../images/text.png'
-import MaskImage from './../../images/mask.png'
-import MaskImage2 from './../../images/mask2.png'
-import MaskImage3 from './../../images/mask3.png'
 import Photo from './../../images/photo.png'
 import Stamp from './../../images/stamp.png'
 import Blot from './../../images/blot.png'
 import Drifting from './../../images/drift.png'
 import Serials from './../../images/serials.webp'
 import Dragon from './../../images/dragon.png'
+import { SwipeEventListener } from 'swipe-event-listener'
 
 function getRandomLeft(max: number): number {
     return Math.floor(Math.random() * max);
 }
 
-function Menu(): ReactElement {
-
+function PortraitMenu(): ReactElement {
     const [active, setActive] = useState([true, false, false])
-
+    const changeMenu = useCallback((indMax: number, nexElem: number, indJump: number): void => {
+        let newActive = [false, false, false]
+        active.forEach((index, i) => {
+            if (index) {
+                if (i !== indMax) {
+                    newActive[i + nexElem] = true
+                }
+                else newActive[indJump] = true
+            }
+        })
+        setActive(newActive)
+    },[active])
 
     useEffect(() => {
-
+        console.log('useEffect')
         function pointerPush(e: KeyboardEvent): void {
+            console.log('push')
             if (e.key === 'ArrowDown') {
                 changeMenu(active.length - 1, 1, 0)
             }
@@ -31,51 +39,33 @@ function Menu(): ReactElement {
                 changeMenu(0, -1, active.length - 1)
             }
         }
-        function changeMenu(indMax: number, nexElem: number, indJump: number): void {
-            let newActive = [false, false, false]
-            active.forEach((index, i) => {
-                if (index) {
-                    if (i !== indMax) {
-                        newActive[i + nexElem] = true
-                    }
-                    else newActive[indJump] = true
-                }
-            })
-            setActive(newActive)
-        }
-
+        
         window.addEventListener('keydown', pointerPush)
         return () => window.removeEventListener('keydown', pointerPush);
-    }, [active])
+    }, [active, changeMenu])
+
+    useEffect(() => {
+        console.log('useef')
+        const body = document.querySelector('body') as HTMLElement;
+        const {swipeArea} = SwipeEventListener({swipeArea: body});
+        function swipeLeft():void {
+            changeMenu(active.length - 1, 1, 0)
+        }
+        function swipeRight():void {
+            changeMenu(0, -1, active.length - 1)
+        }
+        swipeArea.addEventListener('swipeLeft', swipeLeft);
+        swipeArea.addEventListener('swipeRight', swipeRight);
+
+        return () => {
+            swipeArea.removeEventListener('swipeRight',swipeLeft);
+            swipeArea.removeEventListener('swipeLeft', swipeRight);
+        }
+        
+    }, [active, changeMenu])
 
     return (
-        <div className='menuBlock'>
-
-            <div className='module-menu-container'>
-                <div className='grid-nav'>
-                    <img className='menuBackground' src={MenuImg} alt='menu' />
-                </div>
-                <div className='grid-nav second'>
-                    <div className={'menuElement ' + (active[0] ? 'active' : '')} onClick={() => {
-                        setActive([true, false, false])
-                    }}>
-                        <img src={MaskImage3} className={'menuImg ' + (active[0] ? 'activeImg' : '')} alt='text mask' />
-                        <p className={'textMenuElement ' + (active[0] ? 'activeText' : '')}>PROFILE</p>
-                    </div>
-                    <div className={'menuElement ' + (active[1] ? 'active' : '')} onClick={() => {
-                        setActive([false, true, false])
-                    }}>
-                        <img src={MaskImage2} className={'menuImg ' + (active[1] ? 'activeImg' : '')} alt='text mask' />
-                        <p className={'textMenuElement ' + (active[1] ? 'activeText' : '')}>SUMMARY</p>
-                    </div>
-                    <div className={'menuElement ' + (active[2] ? 'active' : '')} onClick={() => {
-                        setActive([false, false, true])
-                    }}>
-                        <img src={MaskImage} className={'menuImg ' + (active[2] ? 'activeImg' : '')} alt='text mask' />
-                        <p className={'textMenuElement ' + (active[2] ? 'activeText' : '')}>ABOUT ME</p>
-                    </div>
-                </div>
-            </div>
+        <div className='menuPortraitBlock'>
 
             <div className={'module-contact-container ' + (active[0] ? 'displayGrid' : '')}>
                 <div className={'grid-desc'}>
@@ -138,23 +128,23 @@ function Menu(): ReactElement {
                         </div>
 
                         <div className='summaryLine one'>
-                                <p className='summaryText'> <span className='titleOfRow'>Work experience:</span> Samara-Informsputnik, 2 years </p>
+                            <p className='summaryText'> <span className='titleOfRow'>Work experience:</span> Samara-Informsputnik, 2 years </p>
                         </div>
 
                         <div className='summaryLine two'>
-                                <p className='summaryText'> <span className='titleOfRow'>Stack:</span> React, Leaflet, Bootstrap, Webpack, SASS </p>
+                            <p className='summaryText'> <span className='titleOfRow'>Stack:</span> React, Leaflet, Bootstrap, Webpack, SASS </p>
                         </div>
 
                         <div className='summaryLine three'>
-                                <p className='summaryText'> <span className='titleOfRow'>Responsibilities:</span> development and support of geo projects: work with marker's geometry on the map, modals and toolbars creation, pixel perfect layout</p>
+                            <p className='summaryText'> <span className='titleOfRow'>Responsibilities:</span> development and support of geo projects: work with marker's geometry on the map, modals and toolbars creation, pixel perfect layout</p>
                         </div>
 
                         <div className='summaryLine four'>
-                                <p className='summaryText'> <span className='titleOfRow'>Work schedule:</span> remote work, flexible hours, full time </p>
+                            <p className='summaryText'> <span className='titleOfRow'>Work schedule:</span> remote work, flexible hours, full time </p>
                         </div>
 
                         <div className='summaryLine five'>
-                                <p className='summaryText'> <span className='titleOfRow'>Key skills:</span> react, javascript, typescript, github, css, sass, html, webpack, bootstrap </p>
+                            <p className='summaryText'> <span className='titleOfRow'>Key skills:</span> react, javascript, typescript, github, css, sass, html, webpack, bootstrap </p>
                         </div>
                     </div>
                 </div>
@@ -171,27 +161,27 @@ function Menu(): ReactElement {
                         </div> */}
 
                         <div className='aboutMeline four'>
-                            <img src={Drifting} className='driftingClass' alt='drift'/>
+                            <img src={Drifting} className='driftingClass' alt='drift' />
                         </div>
 
                         <div className='aboutMeline three'>
-                                <p className='aboutMeText'> <span className='titleOfRow'>Winter drifter:</span> Lada 2104, WeeRide JL, watt's linkage </p>
+                            <p className='aboutMeText'> <span className='titleOfRow'>Winter drifter:</span> Lada 2104, WeeRide JL, watt's linkage </p>
                         </div>
 
                         <div className='aboutMeline one'>
-                            <img src={Serials} className='boClass' alt='drift'/>
+                            <img src={Serials} className='boClass' alt='drift' />
                         </div>
 
                         <div className='aboutMeline two'>
-                                <p className='aboutMeText'> <span className='titleOfRow'>Serials fan:</span> Scrubs (9 season suck), Doctor Who (10 season and further sucks), Sherlock, Shameless, The Big Bang Theory, Loki, Rick and Morty, BoJack Horseman, Archer, GTO, Attack on Titan, etc.</p>
+                            <p className='aboutMeText'> <span className='titleOfRow'>Serials fan:</span> Scrubs (1-8s), Doctor Who (1-9s), Sherlock, Shameless, Loki, Rick and Morty, BoJack Horseman, Archer, GTO, Attack on Titan, etc.</p>
                         </div>
 
                         <div className='aboutMeline five'>
-                            <img src={Dragon} className='bicycleClass' alt='drift'/>
+                            <img src={Dragon} className='bicycleClass' alt='drift' />
                         </div>
 
                         <div className='aboutMeline six'>
-                                <p className='aboutMeText'> <span className='titleOfRow'>Cross-country biker:</span> Jamis Dragon 2014, Manitou Marvel Comp, Formula R0, Deore XT Set </p>
+                            <p className='aboutMeText'> <span className='titleOfRow'>Cross-country biker:</span> Jamis Dragon 2014, Manitou Marvel Comp, Formula R0, Deore XT Set </p>
                         </div>
                     </div>
                 </div>
@@ -201,4 +191,4 @@ function Menu(): ReactElement {
     );
 };
 
-export default Menu;
+export default PortraitMenu;

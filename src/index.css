@@ -3,6 +3,14 @@
   font-family: Maschine;
   src: url(./fonts/mechanical-machine.ttf) format('truetype');
 }
+:root {
+  --height-of-ticket: 8vmin;
+  --height-of-glass-ticket: 4.5vmin;
+  --height-of-text-block-ticket: 4vmin;
+  --height-from-bottom-ticket: 2vmin;
+  --height-of-pixel-ticket: 0.3vmin;
+  --height-of-text-ticket: 3vmin;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

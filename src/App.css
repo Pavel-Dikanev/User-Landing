@@ -5,6 +5,7 @@
   margin:0;
   user-select: none;
   position: relative;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -59,11 +60,15 @@
   z-index: -1;
 }
 
-.sticker {
+.sticker, .stickerPortrait {
   position: absolute;
   top: 0;
   z-index: 2;
   left: 0;
   max-width: 60%;
   max-height: 35%;
+}
+.stickerPortrait {
+  max-width: 98%;
+  max-height: 40%;
 }

@@ -6,9 +6,12 @@ import FrameImage from './../../images/frame.png'
 function getRandomInt(max: number): number {
     return Math.floor(Math.random() * max);
 }
+export interface componentProps {
+    portrait: boolean
+}
 
-function Ticker(): ReactElement {
-    const [joke, setJoke] = useState(jokes[getRandomInt(9)]);
+function Ticker(props: componentProps): ReactElement {
+    const [joke, setJoke] = useState(jokes[getRandomInt(8)]);
     
     React.useEffect(() => {
         let interval = setInterval(() => {
@@ -21,6 +24,23 @@ function Ticker(): ReactElement {
         };
     }, []);
     
+    let rootVars = document.documentElement
+    if (props.portrait) {
+        rootVars && rootVars.style && rootVars.style.setProperty('--height-of-ticket', '10vmin');
+        rootVars && rootVars.style && rootVars.style.setProperty('--height-of-glass-ticket', '6vmin');
+        rootVars && rootVars.style && rootVars.style.setProperty('--height-from-bottom-ticket', '2.5vmin');
+        rootVars && rootVars.style && rootVars.style.setProperty('--height-of-text-ticket', '4vmin');
+        rootVars && rootVars.style && rootVars.style.setProperty('--height-of-text-block-ticket', '5vmin');
+        
+        
+    }
+    else {
+        rootVars && rootVars.style && rootVars.style.setProperty('--height-of-ticket', '8vmin');
+        rootVars && rootVars.style && rootVars.style.setProperty('--height-of-glass-ticket', '4.5vmin');
+        rootVars && rootVars.style && rootVars.style.setProperty('--height-from-bottom-ticket', '2vmin');
+        rootVars && rootVars.style && rootVars.style.setProperty('--height-of-text-ticket', '3vmin');
+        rootVars && rootVars.style && rootVars.style.setProperty('--height-of-text-block-ticket', '4vmin');
+    }
     return (
         <div className="running-text-container">
             <img src={FrameImage} className='frame' alt="sticker"/>
@@ -45,7 +65,7 @@ const jokes: string[] = [
     "Сидят два сталкера на берегу озера. Один другому говорит: — Насчет радиации я тебе чего скажу. Гонят как не знаю кто! Я тут уже лет пять шарюсь безвылазно. Изменений никаких не заметил! Сам как думаешь? — Да фигня однозначно!. Хотя… С другой стороны, чешуя-то в последнее время чешется все чаще.",
     "Значит, поцеловались, конкретно, в Зоне две тачилы. Из одной сталкеры вывалили, из другой… Короче, пошли тут терки, разборки, махалово конкретное. А контролер на нычке сидит и лыбу давит: — Оооо, зашибись. Ща поляна накроется — не стыдно и братанов, чисто, на хату позвать.",
     "Один свободовец говорит другому: — Знаешь… Я больше никогда-никогда в жизни не буду есть грибы! — Это почему же? — Да я им вчера обещал…",
-    "Блин, так не смешно же",
     "Сидят два свободовца. Покурили. Один другому: — Такую тему слышал… Трава в два раза жизнь уменьшает! — Вот тебе сколько лет? — Ну. Двадцать пять… — Ну во! А без травы — уже б полсотни было!",
-    "Зона. Лес. Поляна. На пороге старой сторожки сидит кровосос. Тут из дома выбегает маленький кровососик. И к папе, тормошит его: — Паап, а, пап! Ну покажи сталкера! Пап! Ну покажи сталкера! Тот зашел в сторожку. Выходит, на каждой руке по черепу. И начинает, как в кукольном театре. Левый череп так тонко: — Семеныч, как думаешь. Тут кровососы есть? Правый так басом: — Ну ты даешь, Петруха… Какие тут на фиг кровососы",
+    "Зона. Лес. Поляна. На пороге сторожки сидит кровосос. Из дома выбегает маленький кровососик. И к папе, тормошит его: — Паап, а, пап! Ну покажи сталкера! Тот зашел в сторожку. Выходит, на каждой руке по черепу. И как в кукольном театре. Левый череп тонко: — Семеныч, как думаешь. Тут кровососы есть? Правый басом: — Ну ты даешь, Петруха… Какие тут на фиг кровососы",
+    "Блин, так не смешно же",
 ]
