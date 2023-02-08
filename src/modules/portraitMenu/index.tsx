@@ -96,7 +96,7 @@ function PortraitMenu(): ReactElement {
                                 <div className='bottomBlurLine' />
                                 <p className='leftBottomText'> github </p>
                                 {/* <p className='leftTopText'>lib</p> */}
-                                <p className='leftCenterText github' style={{ left: 10 + getRandomLeft(20) + '%', transform: 'rotate(-' + getRandomLeft(3) + 'deg)' }}><a className='blackLink' href='https://github.com/Pavel-Adlf'>@Pavel-Adlf</a></p>
+                                <p className='leftCenterText github' style={{ left: 10 + getRandomLeft(20) + '%', transform: 'rotate(-' + getRandomLeft(3) + 'deg)' }}><a className='blackLink' href='https://github.com/Pavel-Dikanev' rel="noreferrer" target="_blank">@Pavel-Dikanev</a></p>
                             </div>
                             <div className='profileLine five'>
                                 <div className='bottomBlurLine' />
