@@ -1,5 +1,5 @@
 import React, { ReactElement, useState } from 'react';
-import './styles.css' 
+import './styles.css'
 import BrokenGlass from './../../images/brokenGlass.png'
 import FrameImage from './../../images/frame.png'
 
@@ -12,12 +12,13 @@ export interface componentProps {
 
 function Ticker(props: componentProps): ReactElement {
     const [joke, setJoke] = useState(jokes[getRandomInt(8)]);
-    let getNewJoke = (): void => {
-        let newJoke = jokes[getRandomInt(9)]
-        if (newJoke !== joke) return setJoke(jokes[getRandomInt(9)])
-        else getNewJoke()
-    }
+
     React.useEffect(() => {
+        let getNewJoke = (): void => {
+            let newJoke = jokes[getRandomInt(9)]
+            if (newJoke !== joke) return setJoke(jokes[getRandomInt(9)])
+            else getNewJoke()
+        }
         let interval = setInterval(() => {
             console.log('new joke')
             getNewJoke()
@@ -26,8 +27,8 @@ function Ticker(props: componentProps): ReactElement {
             console.log('clear interval')
             clearInterval(interval);
         };
-    }, []);
-    
+    }, [joke]);
+
     let rootVars = document.documentElement
     if (props.portrait) {
         rootVars && rootVars.style && rootVars.style.setProperty('--height-of-ticket', '10vmin');
@@ -35,8 +36,8 @@ function Ticker(props: componentProps): ReactElement {
         rootVars && rootVars.style && rootVars.style.setProperty('--height-from-bottom-ticket', '2.5vmin');
         rootVars && rootVars.style && rootVars.style.setProperty('--height-of-text-ticket', '4vmin');
         rootVars && rootVars.style && rootVars.style.setProperty('--height-of-text-block-ticket', '5vmin');
-        
-        
+
+
     }
     else {
         rootVars && rootVars.style && rootVars.style.setProperty('--height-of-ticket', '8vmin');
@@ -47,8 +48,8 @@ function Ticker(props: componentProps): ReactElement {
     }
     return (
         <div className="running-text-container">
-            <img src={FrameImage} className='frame' alt="sticker"/>
-            <img src={BrokenGlass} alt='glass' className='broken-glass'/>
+            <img src={FrameImage} className='frame' alt="sticker" />
+            <img src={BrokenGlass} alt='glass' className='broken-glass' />
             <div className="running-text-words"> {joke} </div>
             <div className="running-text-cover"></div>
         </div>

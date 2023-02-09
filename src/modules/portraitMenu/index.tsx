@@ -31,13 +31,11 @@ function PortraitMenu(): ReactElement {
     }, [active])
 
     useEffect(() => {
-        console.log('useEffect')
         function pointerPush(e: KeyboardEvent): void {
-            console.log('push')
-            if (e.key === 'ArrowDown') {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
                 changeMenu(active.length - 1, 1, 0)
             }
-            if (e.key === 'ArrowUp') {
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
                 changeMenu(0, -1, active.length - 1)
             }
         }
@@ -47,7 +45,6 @@ function PortraitMenu(): ReactElement {
     }, [active, changeMenu])
 
     useEffect(() => {
-        console.log('useef')
         const body = document.querySelector('body') as HTMLElement;
         const { swipeArea } = SwipeEventListener({ swipeArea: body });
         function swipeLeft(): void {

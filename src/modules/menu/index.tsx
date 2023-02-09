@@ -24,10 +24,10 @@ function Menu(): ReactElement {
     useEffect(() => {
 
         function pointerPush(e: KeyboardEvent): void {
-            if (e.key === 'ArrowDown') {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
                 changeMenu(active.length - 1, 1, 0)
             }
-            if (e.key === 'ArrowUp') {
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
                 changeMenu(0, -1, active.length - 1)
             }
         }
