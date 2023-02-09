@@ -12,11 +12,15 @@ export interface componentProps {
 
 function Ticker(props: componentProps): ReactElement {
     const [joke, setJoke] = useState(jokes[getRandomInt(8)]);
-    
+    let getNewJoke = (): void => {
+        let newJoke = jokes[getRandomInt(9)]
+        if (newJoke !== joke) return setJoke(jokes[getRandomInt(9)])
+        else getNewJoke()
+    }
     React.useEffect(() => {
         let interval = setInterval(() => {
             console.log('new joke')
-            setJoke(jokes[getRandomInt(9)])
+            getNewJoke()
         }, 40000)
         return () => {
             console.log('clear interval')
